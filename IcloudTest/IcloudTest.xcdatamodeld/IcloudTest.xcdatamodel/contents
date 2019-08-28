@@ -1,4 +1,16 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="1" systemVersion="11A491" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
-    <elements/>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14460.32" systemVersion="17G8030" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="PHQ9" representedClassName=".PHQ9" syncable="YES" codeGenerationType="category">
+        <attribute name="scoreArray" optional="YES" attributeType="Transformable" customClassName="[Int]" syncable="YES"/>
+        <attribute name="userName" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="userNames" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="UserNames" inverseName="phq9" inverseEntity="UserNames" syncable="YES"/>
+    </entity>
+    <entity name="UserNames" representedClassName=".UserNames" syncable="YES" codeGenerationType="category">
+        <attribute name="username" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="phq9" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="PHQ9" inverseName="userNames" inverseEntity="PHQ9" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="UserNames" positionX="-63" positionY="-18" width="128" height="75"/>
+        <element name="PHQ9" positionX="191.76171875" positionY="-33.34375" width="128" height="90"/>
+    </elements>
 </model>

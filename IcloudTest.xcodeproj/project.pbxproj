@@ -12,7 +12,9 @@
 		E64C53FF2310A00900275E6C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E64C53FD2310A00900275E6C /* Main.storyboard */; };
 		E64C54022310A00900275E6C /* IcloudTest.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E64C54002310A00900275E6C /* IcloudTest.xcdatamodeld */; };
 		E64C54042310A00A00275E6C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E64C54032310A00A00275E6C /* Assets.xcassets */; };
-		E64C54072310A00A00275E6C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E64C54052310A00A00275E6C /* LaunchScreen.storyboard */; };
+		E64C54112310A06400275E6C /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E64C54102310A06400275E6C /* CloudKit.framework */; };
+		E64C54172314814C00275E6C /* PHQ9.swift in Sources */ = {isa = PBXBuildFile; fileRef = E64C54162314814C00275E6C /* PHQ9.swift */; };
+		E64C54192314815C00275E6C /* UserNames.swift in Sources */ = {isa = PBXBuildFile; fileRef = E64C54182314815C00275E6C /* UserNames.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,8 +24,11 @@
 		E64C53FE2310A00900275E6C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E64C54012310A00900275E6C /* IcloudTest.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = IcloudTest.xcdatamodel; sourceTree = "<group>"; };
 		E64C54032310A00A00275E6C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		E64C54062310A00A00275E6C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E64C54082310A00A00275E6C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E64C540E2310A06200275E6C /* IcloudTest.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = IcloudTest.entitlements; sourceTree = "<group>"; };
+		E64C54102310A06400275E6C /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
+		E64C54162314814C00275E6C /* PHQ9.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PHQ9.swift; sourceTree = "<group>"; };
+		E64C54182314815C00275E6C /* UserNames.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserNames.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +36,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E64C54112310A06400275E6C /* CloudKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -42,6 +48,7 @@
 			children = (
 				E64C53F82310A00900275E6C /* IcloudTest */,
 				E64C53F72310A00900275E6C /* Products */,
+				E64C540F2310A06400275E6C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -56,15 +63,25 @@
 		E64C53F82310A00900275E6C /* IcloudTest */ = {
 			isa = PBXGroup;
 			children = (
+				E64C540E2310A06200275E6C /* IcloudTest.entitlements */,
 				E64C53F92310A00900275E6C /* AppDelegate.swift */,
 				E64C53FB2310A00900275E6C /* ViewController.swift */,
 				E64C53FD2310A00900275E6C /* Main.storyboard */,
 				E64C54032310A00A00275E6C /* Assets.xcassets */,
-				E64C54052310A00A00275E6C /* LaunchScreen.storyboard */,
 				E64C54082310A00A00275E6C /* Info.plist */,
 				E64C54002310A00900275E6C /* IcloudTest.xcdatamodeld */,
+				E64C54162314814C00275E6C /* PHQ9.swift */,
+				E64C54182314815C00275E6C /* UserNames.swift */,
 			);
 			path = IcloudTest;
+			sourceTree = "<group>";
+		};
+		E64C540F2310A06400275E6C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E64C54102310A06400275E6C /* CloudKit.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -99,6 +116,17 @@
 				TargetAttributes = {
 					E64C53F52310A00800275E6C = {
 						CreatedOnToolsVersion = 10.1;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+							com.apple.Push = {
+								enabled = 1;
+							};
+							com.apple.iCloud = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -125,7 +153,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E64C54072310A00A00275E6C /* LaunchScreen.storyboard in Resources */,
 				E64C54042310A00A00275E6C /* Assets.xcassets in Resources */,
 				E64C53FF2310A00900275E6C /* Main.storyboard in Resources */,
 			);
@@ -141,6 +168,8 @@
 				E64C54022310A00900275E6C /* IcloudTest.xcdatamodeld in Sources */,
 				E64C53FC2310A00900275E6C /* ViewController.swift in Sources */,
 				E64C53FA2310A00900275E6C /* AppDelegate.swift in Sources */,
+				E64C54192314815C00275E6C /* UserNames.swift in Sources */,
+				E64C54172314814C00275E6C /* PHQ9.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -153,14 +182,6 @@
 				E64C53FE2310A00900275E6C /* Base */,
 			);
 			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		E64C54052310A00A00275E6C /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				E64C54062310A00A00275E6C /* Base */,
-			);
-			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -217,7 +238,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -272,7 +293,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -286,9 +307,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = IcloudTest/IcloudTest.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = G6B8GN5459;
 				INFOPLIST_FILE = IcloudTest/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -304,9 +327,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = IcloudTest/IcloudTest.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = G6B8GN5459;
 				INFOPLIST_FILE = IcloudTest/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
