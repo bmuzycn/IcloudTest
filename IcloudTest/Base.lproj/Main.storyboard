@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina4_7" orientation="portrait">
+    <device id="retina6_1" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -15,11 +15,11 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="IcloudTest" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="qeS-QT-asa">
-                                <rect key="frame" x="16" y="20" width="343" height="284"/>
+                                <rect key="frame" x="20" y="44" width="374" height="284"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="284" id="2wg-ER-F9k"/>
@@ -28,52 +28,78 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DoF-gA-NwX">
-                                <rect key="frame" x="145" y="318" width="85" height="30"/>
+                                <rect key="frame" x="164.5" y="342" width="85" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3ul-hv-PUN">
-                                <rect key="frame" x="155.5" y="413" width="64" height="30"/>
+                                <rect key="frame" x="175" y="608" width="64" height="30"/>
                                 <state key="normal" title="Generate"/>
                                 <connections>
                                     <action selector="generate:" destination="BYZ-38-t0r" eventType="touchUpInside" id="SQ8-XW-bAq"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uPm-GX-Jpl">
-                                <rect key="frame" x="164" y="511" width="47" height="30"/>
+                                <rect key="frame" x="164" y="706" width="86" height="30"/>
                                 <state key="normal" title="Fetch"/>
                                 <connections>
                                     <action selector="fetchButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Lmg-78-2Hf"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XF7-tv-fxr">
-                                <rect key="frame" x="145" y="578" width="87" height="30"/>
+                                <rect key="frame" x="145" y="773" width="126" height="30"/>
                                 <state key="normal" title="FetchNames"/>
                                 <connections>
                                     <action selector="fetchNames:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6AH-lM-Bvs"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cdH-eL-zbj">
+                                <rect key="frame" x="171" y="199" width="34" height="30"/>
+                                <state key="normal" title="Sync"/>
+                                <connections>
+                                    <action selector="sync:" destination="BYZ-38-t0r" eventType="touchUpInside" id="jWd-LL-epq"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EMF-UM-LzM">
+                                <rect key="frame" x="158" y="258" width="61" height="30"/>
+                                <state key="normal" title="DeleteAll"/>
+                                <connections>
+                                    <action selector="deleteAll:" destination="BYZ-38-t0r" eventType="touchUpInside" id="oRv-UJ-Czg"/>
+                                </connections>
+                            </button>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="6dF-h8-iBd">
+                                <rect key="frame" x="197" y="438" width="20" height="20"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="cdH-eL-zbj" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="179" id="A4p-su-vXi"/>
                             <constraint firstItem="qeS-QT-asa" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="AYc-aU-eH5"/>
                             <constraint firstItem="DoF-gA-NwX" firstAttribute="top" secondItem="qeS-QT-asa" secondAttribute="bottom" constant="14" id="Chc-fi-AcP"/>
                             <constraint firstItem="uPm-GX-Jpl" firstAttribute="top" secondItem="3ul-hv-PUN" secondAttribute="bottom" constant="68" id="IlM-wZ-fBP"/>
+                            <constraint firstItem="6dF-h8-iBd" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Jne-R0-Uxk"/>
                             <constraint firstItem="uPm-GX-Jpl" firstAttribute="centerX" secondItem="qeS-QT-asa" secondAttribute="centerX" id="SRP-cF-wqr"/>
+                            <constraint firstItem="EMF-UM-LzM" firstAttribute="top" secondItem="cdH-eL-zbj" secondAttribute="bottom" constant="29" id="SmN-MZ-FqC"/>
+                            <constraint firstItem="cdH-eL-zbj" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="171" id="Unh-fH-j49"/>
                             <constraint firstItem="uPm-GX-Jpl" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="VUi-fR-bCF"/>
+                            <constraint firstItem="EMF-UM-LzM" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="158" id="Vkb-PE-qmG"/>
                             <constraint firstItem="XF7-tv-fxr" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="145" id="Xeo-gO-OmI"/>
                             <constraint firstItem="XF7-tv-fxr" firstAttribute="centerX" secondItem="3ul-hv-PUN" secondAttribute="centerX" constant="1" id="a5L-Ja-EFi"/>
                             <constraint firstItem="qeS-QT-asa" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="dH1-zJ-dXW"/>
+                            <constraint firstItem="6dF-h8-iBd" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="ekz-Lo-BY5"/>
                             <constraint firstItem="uPm-GX-Jpl" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="164" id="g6z-Ta-bBz"/>
                             <constraint firstItem="uPm-GX-Jpl" firstAttribute="centerX" secondItem="3ul-hv-PUN" secondAttribute="centerX" id="h83-cC-2Oo"/>
+                            <constraint firstItem="cdH-eL-zbj" firstAttribute="centerX" secondItem="DoF-gA-NwX" secondAttribute="centerX" id="iYm-93-bwX"/>
                             <constraint firstItem="uPm-GX-Jpl" firstAttribute="centerX" secondItem="DoF-gA-NwX" secondAttribute="centerX" id="jse-fB-dEr"/>
+                            <constraint firstItem="EMF-UM-LzM" firstAttribute="centerX" secondItem="cdH-eL-zbj" secondAttribute="centerX" id="p2Q-WU-SmK"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="uPm-GX-Jpl" secondAttribute="bottom" constant="126" id="xfs-d0-xQZ"/>
                             <constraint firstItem="XF7-tv-fxr" firstAttribute="top" secondItem="uPm-GX-Jpl" secondAttribute="bottom" constant="37" id="yt3-Ci-7rk"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="indicator" destination="6dF-h8-iBd" id="hlm-g5-0sd"/>
                         <outlet property="text" destination="qeS-QT-asa" id="Cts-j9-kwH"/>
                         <outlet property="userNameField" destination="DoF-gA-NwX" id="06k-W3-6To"/>
                     </connections>

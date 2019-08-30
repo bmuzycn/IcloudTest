@@ -13,6 +13,7 @@ class ViewController: UIViewController {
     
     var scoreArray = [Int]()
     
+    @IBOutlet weak var indicator: UIActivityIndicatorView!
     @IBOutlet weak var text: UITextView!
     
     @IBOutlet weak var userNameField: UITextField!
@@ -21,7 +22,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         print(FileManager.default.urls(for: .documentDirectory, in: .userDomainMask))
-        
+        indicator.hidesWhenStopped = true
     }
 
     @IBAction func generate(_ sender: UIButton) {
@@ -31,17 +32,26 @@ class ViewController: UIViewController {
             scoreArray.append(value)
             text.text.append("\(num + 1): " + String(value) + "\n")
         }
-        
-        PHQ9.saveData(withUser: userNameField.text ?? "", data: scoreArray)
+        let uuid = UUID().uuidString
+        PHQ9.saveData(withUser: userNameField.text ?? "", data: scoreArray, uuid: uuid)
+        guard let userName = userNameField.text else {return}
+            
+        CloudHelper.saveData(data: Data(username: userName, scoreArray: scoreArray, uuid: uuid)){[unowned self] sucess in
+            if sucess == false {
+                let alert = CloudHelper.showAlert(message: "iCloud error")
+                self.present(alert, animated: true)
+            }
+        }
+
     }
     
     @IBAction func fetchButton(_ sender: UIButton) {
         text.text = ""
         
         if let user = userNameField.text {
-            let data = PHQ9.fetchData(withUser: user) as! Array<[Int]>
+            let data = PHQ9.fetchData(withUser: user) as! [Data]
             for item in data {
-                for score in item {
+                for score in item.scoreArray ?? [] {
                     text.text.append(String(score) + "\n")
 
                 }
@@ -57,6 +67,31 @@ class ViewController: UIViewController {
         
     }
     
+    @IBAction func sync(_ sender: UIButton) {
+        indicator.isHidden = false
+        indicator.startAnimating()
+        CloudHelper.syncData { (success) in
+            if success {
+                DispatchQueue.main.async {
+                    self.indicator.stopAnimating()
+                }
+
+            }
+        }
+    }
     
+    @IBAction func deleteAll(_ sender: UIButton) {
+        indicator.startAnimating()
+
+        CloudHelper.deletAll{
+            print("delete all")
+            DispatchQueue.main.async {
+                self.indicator.stopAnimating()
+
+            }
+
+        }
+
+    }
 }
 

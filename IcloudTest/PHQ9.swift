@@ -12,33 +12,32 @@ import CoreData
 class PHQ9: NSManagedObject {
 
     class func fetchData(withUser user: String) -> Any? {
-        var scoreArrays = Array<[Int]>()
+        var dataArrays = Array<Data>()
         
         let context = AppDelegate.viewContext
         let request = NSFetchRequest<PHQ9>(entityName: "PHQ9")
         request.predicate = NSPredicate(format: "userName == %@", user)
+        if user == "All" {
+            request.predicate = NSPredicate(value: true)
+        }
         do {
             let data = try context.fetch(request)
-            print(data.count)
             for item in data {
-                if let scores = item.scoreArray {
-                    scoreArrays.append(scores)
-
-                }
+                let newData = Data(username: item.userName, scoreArray: item.scoreArray, uuid: item.uuid)
+                dataArrays.append(newData)
             }
         } catch {
             print(error)
             
         }
-        print(scoreArrays)
-        return scoreArrays
+        return dataArrays
     }
     
-    class func saveData(withUser user: String, data: [Int]) {
+    class func saveData(withUser user: String?, data: [Int]?, uuid: String?) {
         var userExists = false
         let context = AppDelegate.viewContext
         let request = NSFetchRequest<UserNames>(entityName: "UserNames")
-        request.predicate = NSPredicate(format: "username == %@", user)
+        request.predicate = NSPredicate(format: "username == %@", user ?? "")
         var userNames: UserNames?
         do {
             let data = try context.fetch(request)
@@ -55,6 +54,7 @@ class PHQ9: NSManagedObject {
         let newData = PHQ9(context: context)
         newData.scoreArray = data
         newData.userName = user
+        newData.uuid = uuid
         if userExists == false {
             userNames = UserNames(context: context)
             userNames!.username = user

@@ -3,6 +3,7 @@
     <entity name="PHQ9" representedClassName=".PHQ9" syncable="YES" codeGenerationType="category">
         <attribute name="scoreArray" optional="YES" attributeType="Transformable" customClassName="[Int]" syncable="YES"/>
         <attribute name="userName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="uuid" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="userNames" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="UserNames" inverseName="phq9" inverseEntity="UserNames" syncable="YES"/>
     </entity>
     <entity name="UserNames" representedClassName=".UserNames" syncable="YES" codeGenerationType="category">
@@ -11,6 +12,6 @@
     </entity>
     <elements>
         <element name="UserNames" positionX="-63" positionY="-18" width="128" height="75"/>
-        <element name="PHQ9" positionX="191.76171875" positionY="-33.34375" width="128" height="90"/>
+        <element name="PHQ9" positionX="191.76171875" positionY="-33.34375" width="128" height="105"/>
     </elements>
 </model>

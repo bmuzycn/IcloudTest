@@ -15,6 +15,7 @@
 		E64C54112310A06400275E6C /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E64C54102310A06400275E6C /* CloudKit.framework */; };
 		E64C54172314814C00275E6C /* PHQ9.swift in Sources */ = {isa = PBXBuildFile; fileRef = E64C54162314814C00275E6C /* PHQ9.swift */; };
 		E64C54192314815C00275E6C /* UserNames.swift in Sources */ = {isa = PBXBuildFile; fileRef = E64C54182314815C00275E6C /* UserNames.swift */; };
+		E64C541B2316E0FF00275E6C /* CloudHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E64C541A2316E0FF00275E6C /* CloudHelper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +30,7 @@
 		E64C54102310A06400275E6C /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 		E64C54162314814C00275E6C /* PHQ9.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PHQ9.swift; sourceTree = "<group>"; };
 		E64C54182314815C00275E6C /* UserNames.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserNames.swift; sourceTree = "<group>"; };
+		E64C541A2316E0FF00275E6C /* CloudHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudHelper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +74,7 @@
 				E64C54002310A00900275E6C /* IcloudTest.xcdatamodeld */,
 				E64C54162314814C00275E6C /* PHQ9.swift */,
 				E64C54182314815C00275E6C /* UserNames.swift */,
+				E64C541A2316E0FF00275E6C /* CloudHelper.swift */,
 			);
 			path = IcloudTest;
 			sourceTree = "<group>";
@@ -168,6 +171,7 @@
 				E64C54022310A00900275E6C /* IcloudTest.xcdatamodeld in Sources */,
 				E64C53FC2310A00900275E6C /* ViewController.swift in Sources */,
 				E64C53FA2310A00900275E6C /* AppDelegate.swift in Sources */,
+				E64C541B2316E0FF00275E6C /* CloudHelper.swift in Sources */,
 				E64C54192314815C00275E6C /* UserNames.swift in Sources */,
 				E64C54172314814C00275E6C /* PHQ9.swift in Sources */,
 			);
